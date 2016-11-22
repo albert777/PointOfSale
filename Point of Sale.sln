@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory Management System", "Inventory Management System\Inventory Management System.csproj", "{131BC66C-59E0-41A9-8705-A0A09B83B077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseLink", "DatabaseLink\DatabaseLink.csproj", "{ACAC2167-6AD3-4D39-83B4-8384B558FE6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCapture", "DataCapture\DataCapture.csproj", "{FFA98DC1-C040-4AC5-ACF9-6B5165C705A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{131BC66C-59E0-41A9-8705-A0A09B83B077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{131BC66C-59E0-41A9-8705-A0A09B83B077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{131BC66C-59E0-41A9-8705-A0A09B83B077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{131BC66C-59E0-41A9-8705-A0A09B83B077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACAC2167-6AD3-4D39-83B4-8384B558FE6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACAC2167-6AD3-4D39-83B4-8384B558FE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACAC2167-6AD3-4D39-83B4-8384B558FE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACAC2167-6AD3-4D39-83B4-8384B558FE6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA98DC1-C040-4AC5-ACF9-6B5165C705A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA98DC1-C040-4AC5-ACF9-6B5165C705A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA98DC1-C040-4AC5-ACF9-6B5165C705A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA98DC1-C040-4AC5-ACF9-6B5165C705A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,7 @@
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\DataCapture\obj\Debug\DataCapture.csprojResolveAssemblyReference.cache
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\DataCapture\bin\Debug\DataCapture.dll
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\DataCapture\bin\Debug\DataCapture.pdb
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\DataCapture\bin\Debug\DatabaseLink.dll
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\DataCapture\bin\Debug\DatabaseLink.pdb
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\DataCapture\obj\Debug\DataCapture.dll
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\DataCapture\obj\Debug\DataCapture.pdb

@@ -1,0 +1,5 @@
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\DatabaseLink\bin\Debug\DatabaseLink.dll
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\DatabaseLink\bin\Debug\DatabaseLink.pdb
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\DatabaseLink\obj\Debug\DatabaseLink.csprojResolveAssemblyReference.cache
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\DatabaseLink\obj\Debug\DatabaseLink.dll
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\DatabaseLink\obj\Debug\DatabaseLink.pdb

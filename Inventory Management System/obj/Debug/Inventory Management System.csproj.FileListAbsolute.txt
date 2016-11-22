@@ -1,0 +1,19 @@
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\bin\Debug\Inventory Management System.exe.config
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory Management System.csprojResolveAssemblyReference.cache
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory_Management_System.Login.resources
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory_Management_System.MainView.resources
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory_Management_System.Properties.Resources.resources
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory Management System.csproj.GenerateResource.Cache
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\bin\Debug\Inventory Management System.exe
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\bin\Debug\Inventory Management System.pdb
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\bin\Debug\DataCapture.dll
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\bin\Debug\DatabaseLink.dll
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\bin\Debug\DataCapture.pdb
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\bin\Debug\DatabaseLink.pdb
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory Management System.exe
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory Management System.pdb
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory_Management_System.AddEmpForm.resources
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory_Management_System.EmpUpdateForm.resources
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory_Management_System.AddSupplier.resources
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory_Management_System.UpdateSupplier.resources
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory_Management_System.DBConfig.resources
