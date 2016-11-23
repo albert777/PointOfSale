@@ -59,6 +59,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtbSearch = new System.Windows.Forms.TextBox();
             this.gridSearchSup = new System.Windows.Forms.DataGridView();
+            this.new_emp = new System.Windows.Forms.Label();
             this.tabUpdateDelete.SuspendLayout();
             this.pgUpdateDelete.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -71,6 +72,7 @@
             this.tabUpdateDelete.Controls.Add(this.pgUpdateDelete);
             this.tabUpdateDelete.Controls.Add(this.pgSearch);
             this.tabUpdateDelete.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabUpdateDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabUpdateDelete.Location = new System.Drawing.Point(0, 52);
             this.tabUpdateDelete.Name = "tabUpdateDelete";
             this.tabUpdateDelete.SelectedIndex = 0;
@@ -81,10 +83,10 @@
             // 
             this.pgUpdateDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pgUpdateDelete.Controls.Add(this.groupBox1);
-            this.pgUpdateDelete.Location = new System.Drawing.Point(4, 22);
+            this.pgUpdateDelete.Location = new System.Drawing.Point(4, 29);
             this.pgUpdateDelete.Name = "pgUpdateDelete";
             this.pgUpdateDelete.Padding = new System.Windows.Forms.Padding(3);
-            this.pgUpdateDelete.Size = new System.Drawing.Size(784, 407);
+            this.pgUpdateDelete.Size = new System.Drawing.Size(784, 400);
             this.pgUpdateDelete.TabIndex = 0;
             this.pgUpdateDelete.Text = "Update or Delete";
             // 
@@ -115,7 +117,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 15);
+            this.groupBox1.Location = new System.Drawing.Point(3, 8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(778, 389);
             this.groupBox1.TabIndex = 1;
@@ -376,12 +378,23 @@
             this.gridSearchSup.TabIndex = 0;
             this.gridSearchSup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridSearchSup_CellContentClick);
             // 
+            // new_emp
+            // 
+            this.new_emp.AutoSize = true;
+            this.new_emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.new_emp.Location = new System.Drawing.Point(225, 9);
+            this.new_emp.Name = "new_emp";
+            this.new_emp.Size = new System.Drawing.Size(331, 25);
+            this.new_emp.TabIndex = 42;
+            this.new_emp.Text = "Update or Delete Supplier Details";
+            // 
             // UpdateSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(792, 485);
+            this.Controls.Add(this.new_emp);
             this.Controls.Add(this.tabUpdateDelete);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -397,6 +410,7 @@
             this.pgSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridSearchSup)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -433,5 +447,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtbSearch;
+        private System.Windows.Forms.Label new_emp;
     }
 }

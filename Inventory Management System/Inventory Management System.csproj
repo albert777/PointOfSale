@@ -58,6 +58,12 @@
     <Compile Include="AddSupplier.Designer.cs">
       <DependentUpon>AddSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddUpdateStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUpdateStock.Designer.cs">
+      <DependentUpon>AddUpdateStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddSupplier.resx">
       <DependentUpon>AddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUpdateStock.resx">
+      <DependentUpon>AddUpdateStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DBConfig.resx">
       <DependentUpon>DBConfig.cs</DependentUpon>
