@@ -539,6 +539,7 @@
             this.ClientSize = new System.Drawing.Size(792, 513);
             this.Controls.Add(this.tabAddStock);
             this.Controls.Add(this.new_emp);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AddUpdateStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

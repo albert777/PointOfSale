@@ -130,6 +130,7 @@ namespace Inventory_Management_System
         private void btnSave_Click(object sender, EventArgs e)
         {
             CaptureStockInfo();
+            MessageBox.Show("Record Added successfully", "Data Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

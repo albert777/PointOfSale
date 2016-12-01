@@ -558,6 +558,7 @@
             this.ClientSize = new System.Drawing.Size(884, 509);
             this.Controls.Add(this.new_emp);
             this.Controls.Add(this.tabUpdateDelete);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EmpUpdateForm";

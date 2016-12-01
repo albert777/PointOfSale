@@ -76,21 +76,21 @@
             // newEntryToolStripMenuItem
             // 
             this.newEntryToolStripMenuItem.Name = "newEntryToolStripMenuItem";
-            this.newEntryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newEntryToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.newEntryToolStripMenuItem.Text = "New Entry";
             this.newEntryToolStripMenuItem.Click += new System.EventHandler(this.newEntryToolStripMenuItem_Click);
             // 
             // updateEditToolStripMenuItem
             // 
             this.updateEditToolStripMenuItem.Name = "updateEditToolStripMenuItem";
-            this.updateEditToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.updateEditToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.updateEditToolStripMenuItem.Text = "Update";
             this.updateEditToolStripMenuItem.Click += new System.EventHandler(this.updateEditToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -107,21 +107,21 @@
             // newEntryToolStripMenuItem1
             // 
             this.newEntryToolStripMenuItem1.Name = "newEntryToolStripMenuItem1";
-            this.newEntryToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.newEntryToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.newEntryToolStripMenuItem1.Text = "New Entry";
             this.newEntryToolStripMenuItem1.Click += new System.EventHandler(this.newEntryToolStripMenuItem1_Click);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.updateToolStripMenuItem.Text = "Update";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem1
             // 
             this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
-            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.deleteToolStripMenuItem1.Text = "Delete";
             this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
             // 
@@ -136,7 +136,7 @@
             // newEntryToolStripMenuItem2
             // 
             this.newEntryToolStripMenuItem2.Name = "newEntryToolStripMenuItem2";
-            this.newEntryToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.newEntryToolStripMenuItem2.Size = new System.Drawing.Size(128, 22);
             this.newEntryToolStripMenuItem2.Text = "New Entry";
             this.newEntryToolStripMenuItem2.Click += new System.EventHandler(this.newEntryToolStripMenuItem2_Click);
             // 
@@ -147,6 +147,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1348, 690);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

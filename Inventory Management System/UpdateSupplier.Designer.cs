@@ -328,10 +328,10 @@
             this.pgSearch.Controls.Add(this.txtbSearch);
             this.pgSearch.Controls.Add(this.gridSearchSup);
             this.pgSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pgSearch.Location = new System.Drawing.Point(4, 22);
+            this.pgSearch.Location = new System.Drawing.Point(4, 29);
             this.pgSearch.Name = "pgSearch";
             this.pgSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.pgSearch.Size = new System.Drawing.Size(784, 407);
+            this.pgSearch.Size = new System.Drawing.Size(784, 400);
             this.pgSearch.TabIndex = 1;
             this.pgSearch.Text = "Search Supplier";
             // 
@@ -371,7 +371,7 @@
             this.gridSearchSup.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gridSearchSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridSearchSup.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridSearchSup.Location = new System.Drawing.Point(3, 83);
+            this.gridSearchSup.Location = new System.Drawing.Point(3, 76);
             this.gridSearchSup.Name = "gridSearchSup";
             this.gridSearchSup.RowHeadersVisible = false;
             this.gridSearchSup.Size = new System.Drawing.Size(778, 321);
@@ -396,6 +396,7 @@
             this.ClientSize = new System.Drawing.Size(792, 485);
             this.Controls.Add(this.new_emp);
             this.Controls.Add(this.tabUpdateDelete);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UpdateSupplier";
