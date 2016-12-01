@@ -32,10 +32,10 @@
             this.tabAddStock = new System.Windows.Forms.TabControl();
             this.PageAddStock = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.txtCategoryID = new System.Windows.Forms.TextBox();
             this.txtSupplierID = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -51,6 +51,17 @@
             this.PageUpdateStock = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.listViewStockSearch = new System.Windows.Forms.ListView();
+            this.ProductID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Product_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SupplierID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CategoryID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Qunatity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UnitPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtbUnitPrice = new System.Windows.Forms.TextBox();
             this.txtbQuantity = new System.Windows.Forms.TextBox();
@@ -66,22 +77,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtUnitPrice = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtbCategoryName = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.listViewStockSearch = new System.Windows.Forms.ListView();
-            this.ProductID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Product_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SupplierID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CategoryID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CategoryName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Qunatity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.UnitPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabAddStock.SuspendLayout();
             this.PageAddStock.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -124,12 +119,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.txtUnitPrice);
             this.groupBox2.Controls.Add(this.btnClose);
             this.groupBox2.Controls.Add(this.btnSave);
             this.groupBox2.Controls.Add(this.txtQuantity);
-            this.groupBox2.Controls.Add(this.txtCategoryName);
             this.groupBox2.Controls.Add(this.txtCategoryID);
             this.groupBox2.Controls.Add(this.txtSupplierID);
             this.groupBox2.Controls.Add(this.txtDescription);
@@ -149,18 +142,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stock Details";
             // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.Location = new System.Drawing.Point(233, 272);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(98, 26);
+            this.txtUnitPrice.TabIndex = 24;
+            // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(463, 344);
+            this.btnClose.Location = new System.Drawing.Point(463, 326);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(65, 40);
             this.btnClose.TabIndex = 23;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(367, 344);
+            this.btnSave.Location = new System.Drawing.Point(367, 326);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(65, 40);
             this.btnSave.TabIndex = 22;
@@ -170,17 +171,10 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(233, 274);
+            this.txtQuantity.Location = new System.Drawing.Point(233, 235);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(98, 26);
             this.txtQuantity.TabIndex = 13;
-            // 
-            // txtCategoryName
-            // 
-            this.txtCategoryName.Location = new System.Drawing.Point(233, 238);
-            this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(199, 26);
-            this.txtCategoryName.TabIndex = 12;
             // 
             // txtCategoryID
             // 
@@ -212,6 +206,7 @@
             // 
             // txtProductID
             // 
+            this.txtProductID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txtProductID.Location = new System.Drawing.Point(233, 52);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(199, 26);
@@ -220,7 +215,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(107, 316);
+            this.label7.Location = new System.Drawing.Point(107, 277);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 20);
             this.label7.TabIndex = 6;
@@ -229,7 +224,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(107, 280);
+            this.label6.Location = new System.Drawing.Point(107, 241);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 20);
             this.label6.TabIndex = 5;
@@ -294,8 +289,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.txtbCategoryName);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.txtbUnitPrice);
@@ -324,7 +317,7 @@
             this.groupBox3.Controls.Add(this.listViewStockSearch);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.btnSearch);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.txtSearch);
             this.groupBox3.Location = new System.Drawing.Point(344, 25);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(422, 366);
@@ -332,193 +325,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Search Stock";
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(251, 339);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(76, 40);
-            this.btnUpdate.TabIndex = 22;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // txtbUnitPrice
-            // 
-            this.txtbUnitPrice.Location = new System.Drawing.Point(139, 310);
-            this.txtbUnitPrice.Name = "txtbUnitPrice";
-            this.txtbUnitPrice.Size = new System.Drawing.Size(98, 26);
-            this.txtbUnitPrice.TabIndex = 13;
-            // 
-            // txtbQuantity
-            // 
-            this.txtbQuantity.Location = new System.Drawing.Point(139, 274);
-            this.txtbQuantity.Name = "txtbQuantity";
-            this.txtbQuantity.Size = new System.Drawing.Size(98, 26);
-            this.txtbQuantity.TabIndex = 12;
-            // 
-            // txtbCategoryID
-            // 
-            this.txtbCategoryID.Location = new System.Drawing.Point(139, 197);
-            this.txtbCategoryID.Name = "txtbCategoryID";
-            this.txtbCategoryID.Size = new System.Drawing.Size(199, 26);
-            this.txtbCategoryID.TabIndex = 11;
-            // 
-            // txtbSupplierID
-            // 
-            this.txtbSupplierID.Location = new System.Drawing.Point(139, 157);
-            this.txtbSupplierID.Name = "txtbSupplierID";
-            this.txtbSupplierID.Size = new System.Drawing.Size(199, 26);
-            this.txtbSupplierID.TabIndex = 10;
-            // 
-            // txtbDescription
-            // 
-            this.txtbDescription.Location = new System.Drawing.Point(139, 121);
-            this.txtbDescription.Name = "txtbDescription";
-            this.txtbDescription.Size = new System.Drawing.Size(199, 26);
-            this.txtbDescription.TabIndex = 9;
-            // 
-            // txtbProductName
-            // 
-            this.txtbProductName.Location = new System.Drawing.Point(139, 86);
-            this.txtbProductName.Name = "txtbProductName";
-            this.txtbProductName.Size = new System.Drawing.Size(199, 26);
-            this.txtbProductName.TabIndex = 8;
-            // 
-            // txtbProductID
-            // 
-            this.txtbProductID.Location = new System.Drawing.Point(139, 49);
-            this.txtbProductID.Name = "txtbProductID";
-            this.txtbProductID.Size = new System.Drawing.Size(199, 26);
-            this.txtbProductID.TabIndex = 7;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 316);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 20);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Unit Price";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 280);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 20);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Quantity";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 203);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(94, 20);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Category ID";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 163);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 20);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Supplier ID";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(13, 127);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 20);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Description";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(13, 92);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(110, 20);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Product Name";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(13, 55);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(85, 20);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Product ID";
-            // 
-            // txtUnitPrice
-            // 
-            this.txtUnitPrice.Location = new System.Drawing.Point(233, 311);
-            this.txtUnitPrice.Name = "txtUnitPrice";
-            this.txtUnitPrice.Size = new System.Drawing.Size(98, 26);
-            this.txtUnitPrice.TabIndex = 24;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(107, 244);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(119, 20);
-            this.label15.TabIndex = 25;
-            this.label15.Text = "Category Name";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(13, 243);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(119, 20);
-            this.label16.TabIndex = 27;
-            this.label16.Text = "Category Name";
-            // 
-            // txtbCategoryName
-            // 
-            this.txtbCategoryName.Location = new System.Drawing.Point(139, 237);
-            this.txtbCategoryName.Name = "txtbCategoryName";
-            this.txtbCategoryName.Size = new System.Drawing.Size(199, 26);
-            this.txtbCategoryName.TabIndex = 26;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(113, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 26);
-            this.textBox1.TabIndex = 8;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(327, 42);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 29);
-            this.btnSearch.TabIndex = 9;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 48);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(90, 20);
-            this.label17.TabIndex = 10;
-            this.label17.Text = "Search Key";
-            // 
             // listViewStockSearch
             // 
+            this.listViewStockSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.listViewStockSearch.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ProductID,
             this.Product_Name,
             this.Description,
             this.SupplierID,
             this.CategoryID,
-            this.CategoryName,
             this.Qunatity,
             this.UnitPrice});
             this.listViewStockSearch.FullRowSelect = true;
@@ -529,6 +344,7 @@
             this.listViewStockSearch.TabIndex = 11;
             this.listViewStockSearch.UseCompatibleStateImageBehavior = false;
             this.listViewStockSearch.View = System.Windows.Forms.View.Details;
+            this.listViewStockSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewStockSearch_MouseClick);
             // 
             // ProductID
             // 
@@ -555,11 +371,6 @@
             this.CategoryID.Text = "Category ID";
             this.CategoryID.Width = 90;
             // 
-            // CategoryName
-            // 
-            this.CategoryName.Text = "Category Name";
-            this.CategoryName.Width = 200;
-            // 
             // Qunatity
             // 
             this.Qunatity.Text = "Qunatity";
@@ -569,6 +380,156 @@
             // 
             this.UnitPrice.Text = "Unit Price";
             this.UnitPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 48);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(90, 20);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "Search Key";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(327, 42);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 29);
+            this.btnSearch.TabIndex = 9;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(113, 42);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(197, 26);
+            this.txtSearch.TabIndex = 8;
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(251, 326);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(76, 40);
+            this.btnUpdate.TabIndex = 22;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // txtbUnitPrice
+            // 
+            this.txtbUnitPrice.Location = new System.Drawing.Point(139, 269);
+            this.txtbUnitPrice.Name = "txtbUnitPrice";
+            this.txtbUnitPrice.Size = new System.Drawing.Size(98, 26);
+            this.txtbUnitPrice.TabIndex = 13;
+            // 
+            // txtbQuantity
+            // 
+            this.txtbQuantity.Location = new System.Drawing.Point(139, 233);
+            this.txtbQuantity.Name = "txtbQuantity";
+            this.txtbQuantity.Size = new System.Drawing.Size(98, 26);
+            this.txtbQuantity.TabIndex = 12;
+            // 
+            // txtbCategoryID
+            // 
+            this.txtbCategoryID.Location = new System.Drawing.Point(139, 197);
+            this.txtbCategoryID.Name = "txtbCategoryID";
+            this.txtbCategoryID.Size = new System.Drawing.Size(199, 26);
+            this.txtbCategoryID.TabIndex = 11;
+            // 
+            // txtbSupplierID
+            // 
+            this.txtbSupplierID.Location = new System.Drawing.Point(139, 160);
+            this.txtbSupplierID.Name = "txtbSupplierID";
+            this.txtbSupplierID.Size = new System.Drawing.Size(199, 26);
+            this.txtbSupplierID.TabIndex = 10;
+            // 
+            // txtbDescription
+            // 
+            this.txtbDescription.Location = new System.Drawing.Point(139, 124);
+            this.txtbDescription.Name = "txtbDescription";
+            this.txtbDescription.Size = new System.Drawing.Size(199, 26);
+            this.txtbDescription.TabIndex = 9;
+            // 
+            // txtbProductName
+            // 
+            this.txtbProductName.Location = new System.Drawing.Point(139, 86);
+            this.txtbProductName.Name = "txtbProductName";
+            this.txtbProductName.Size = new System.Drawing.Size(199, 26);
+            this.txtbProductName.TabIndex = 8;
+            // 
+            // txtbProductID
+            // 
+            this.txtbProductID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtbProductID.Location = new System.Drawing.Point(139, 49);
+            this.txtbProductID.Name = "txtbProductID";
+            this.txtbProductID.Size = new System.Drawing.Size(199, 26);
+            this.txtbProductID.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 275);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 20);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Unit Price";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 239);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(68, 20);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Quantity";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 203);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(94, 20);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Category ID";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(13, 166);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(88, 20);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Supplier ID";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(13, 130);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 20);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Description";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(13, 92);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(110, 20);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Product Name";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(13, 55);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(85, 20);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Product ID";
             // 
             // AddUpdateStock
             // 
@@ -604,7 +565,6 @@
         private System.Windows.Forms.TabPage PageUpdateStock;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtQuantity;
-        private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.TextBox txtCategoryID;
         private System.Windows.Forms.TextBox txtSupplierID;
         private System.Windows.Forms.TextBox txtDescription;
@@ -635,22 +595,18 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtUnitPrice;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtbCategoryName;
+        private System.Windows.Forms.GroupBox groupBox3;
         internal System.Windows.Forms.ListView listViewStockSearch;
         internal System.Windows.Forms.ColumnHeader ProductID;
         internal System.Windows.Forms.ColumnHeader Product_Name;
         internal System.Windows.Forms.ColumnHeader Description;
         internal System.Windows.Forms.ColumnHeader SupplierID;
         internal System.Windows.Forms.ColumnHeader CategoryID;
-        internal System.Windows.Forms.ColumnHeader CategoryName;
         internal System.Windows.Forms.ColumnHeader Qunatity;
         internal System.Windows.Forms.ColumnHeader UnitPrice;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }

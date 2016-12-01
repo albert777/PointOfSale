@@ -40,7 +40,7 @@ namespace Inventory_Management_System
                 txtbSupID.Text = null; txtbCntctSname.Text = null; txtbCntctFname.Text = null;
                 txtbCompName.Text = null; txtbCompAddr.Text = null; combGender.Text = null;
                 combMarSt.Text = null; txtbEmail.Text = null; txtbSupAddr.Text = null; txtbPhone.Text = null;
-                MessageBox.Show("Suppliers Details saved successfully!", "Data Saved");
+                MessageBox.Show("Suppliers Details saved successfully!", "Data Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch(Exception)
             {

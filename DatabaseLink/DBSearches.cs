@@ -38,5 +38,29 @@ namespace DatabaseLink
             ConnectDB.dAdapter.Fill(dTable);
             return dTable;
         }
+
+
+        public DataTable SearchStocks()
+        {
+            ConnectDB.ConnDB();
+            ConnectDB.cmd = new MySqlCommand("SearchStocks", ConnectDB.con);
+            ConnectDB.cmd.Parameters.Add("KeyWrd", MySqlDbType.String).Value = KeyWrd;
+            ConnectDB.cmd.CommandType = CommandType.StoredProcedure;
+            ConnectDB.dAdapter = new MySqlDataAdapter(ConnectDB.cmd);
+            ConnectDB.dAdapter.Fill(dTable);
+            return dTable;
+        }
+
+        public DataTable SearchStocksWithProdID()
+        {
+            ConnectDB.ConnDB();
+            ConnectDB.cmd = new MySqlCommand("SearchStocksWithProdID", ConnectDB.con);
+            ConnectDB.cmd.Parameters.Add("ProdID", MySqlDbType.String).Value = KeyWrd;
+            ConnectDB.cmd.CommandType = CommandType.StoredProcedure;
+            ConnectDB.dAdapter = new MySqlDataAdapter(ConnectDB.cmd);
+            ConnectDB.dAdapter.Fill(dTable);
+            return dTable;
+        }
+
     }
 }

@@ -22,7 +22,7 @@ namespace DataCapture
             addEmp.StID = StD; addEmp.Sname = Snam; addEmp.Fname = Fnam; addEmp.gender = gendr; addEmp.Mstatus = Mstats; addEmp.quali = qual; addEmp.relg = rel;
             addEmp.soo = soor; addEmp.email = emal; addEmp.Addr = Adr; addEmp.Phone = Phon; addEmp.rID = RID; addEmp.Rname = Rnam; addEmp.dob = DOB; addEmp.doe = DOE; addEmp.img = IMG;
             addEmp.UpdateEmployee();
-            //addEmp.UpdateEmpRole();
+           
         }
 
         // Datatable method to initialize datagridview columnheader at form load     

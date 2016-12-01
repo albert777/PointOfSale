@@ -116,5 +116,11 @@ namespace Inventory_Management_System
             //    db.ShowDialog();
             //}
         }
+
+        private void newEntryToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            AddUpdateStock stocks = new AddUpdateStock();
+            stocks.ShowDialog();
+        }
     }
 }
