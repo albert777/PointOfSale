@@ -58,13 +58,22 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtbSearch = new System.Windows.Forms.TextBox();
-            this.gridSearchSup = new System.Windows.Forms.DataGridView();
             this.new_emp = new System.Windows.Forms.Label();
+            this.listViewSupplier = new System.Windows.Forms.ListView();
+            this.SuppliersID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CompanyNam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Surname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CompanyAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SuppliersAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MaritalStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PhoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabUpdateDelete.SuspendLayout();
             this.pgUpdateDelete.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pgSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSearchSup)).BeginInit();
             this.SuspendLayout();
             // 
             // tabUpdateDelete
@@ -323,15 +332,15 @@
             // pgSearch
             // 
             this.pgSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pgSearch.Controls.Add(this.listViewSupplier);
             this.pgSearch.Controls.Add(this.label11);
             this.pgSearch.Controls.Add(this.btnSearch);
             this.pgSearch.Controls.Add(this.txtbSearch);
-            this.pgSearch.Controls.Add(this.gridSearchSup);
             this.pgSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pgSearch.Location = new System.Drawing.Point(4, 22);
+            this.pgSearch.Location = new System.Drawing.Point(4, 29);
             this.pgSearch.Name = "pgSearch";
             this.pgSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.pgSearch.Size = new System.Drawing.Size(784, 407);
+            this.pgSearch.Size = new System.Drawing.Size(784, 400);
             this.pgSearch.TabIndex = 1;
             this.pgSearch.Text = "Search Supplier";
             // 
@@ -366,18 +375,6 @@
             this.txtbSearch.TabIndex = 44;
             this.txtbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbSearch_KeyDown);
             // 
-            // gridSearchSup
-            // 
-            this.gridSearchSup.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gridSearchSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridSearchSup.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridSearchSup.Location = new System.Drawing.Point(3, 83);
-            this.gridSearchSup.Name = "gridSearchSup";
-            this.gridSearchSup.RowHeadersVisible = false;
-            this.gridSearchSup.Size = new System.Drawing.Size(778, 321);
-            this.gridSearchSup.TabIndex = 0;
-            this.gridSearchSup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridSearchSup_CellContentClick);
-            // 
             // new_emp
             // 
             this.new_emp.AutoSize = true;
@@ -387,6 +384,80 @@
             this.new_emp.Size = new System.Drawing.Size(331, 25);
             this.new_emp.TabIndex = 42;
             this.new_emp.Text = "Update or Delete Supplier Details";
+            // 
+            // listViewSupplier
+            // 
+            this.listViewSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.listViewSupplier.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.SuppliersID,
+            this.CompanyNam,
+            this.Surname,
+            this.FirstName,
+            this.CompanyAddress,
+            this.SuppliersAddress,
+            this.Gender,
+            this.MaritalStatus,
+            this.Email,
+            this.PhoneNumber});
+            this.listViewSupplier.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listViewSupplier.FullRowSelect = true;
+            this.listViewSupplier.GridLines = true;
+            this.listViewSupplier.Location = new System.Drawing.Point(3, 75);
+            this.listViewSupplier.Name = "listViewSupplier";
+            this.listViewSupplier.Size = new System.Drawing.Size(778, 322);
+            this.listViewSupplier.TabIndex = 47;
+            this.listViewSupplier.UseCompatibleStateImageBehavior = false;
+            this.listViewSupplier.View = System.Windows.Forms.View.Details;
+            this.listViewSupplier.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewSupplier_MouseClick);
+            // 
+            // SuppliersID
+            // 
+            this.SuppliersID.Text = "Suppliers ID";
+            this.SuppliersID.Width = 90;
+            // 
+            // CompanyNam
+            // 
+            this.CompanyNam.Text = "Company Name";
+            this.CompanyNam.Width = 150;
+            // 
+            // Surname
+            // 
+            this.Surname.Text = "Contact Surname";
+            this.Surname.Width = 200;
+            // 
+            // FirstName
+            // 
+            this.FirstName.Text = "Contact First Name";
+            this.FirstName.Width = 200;
+            // 
+            // CompanyAddress
+            // 
+            this.CompanyAddress.Text = "Company Address";
+            this.CompanyAddress.Width = 250;
+            // 
+            // SuppliersAddress
+            // 
+            this.SuppliersAddress.Text = "Suppliers Address";
+            this.SuppliersAddress.Width = 250;
+            // 
+            // Gender
+            // 
+            this.Gender.Text = "Gender";
+            // 
+            // MaritalStatus
+            // 
+            this.MaritalStatus.Text = "Marital Status";
+            this.MaritalStatus.Width = 80;
+            // 
+            // Email
+            // 
+            this.Email.Text = "Email";
+            this.Email.Width = 100;
+            // 
+            // PhoneNumber
+            // 
+            this.PhoneNumber.Text = "Phone Number";
+            this.PhoneNumber.Width = 100;
             // 
             // UpdateSupplier
             // 
@@ -408,7 +479,6 @@
             this.groupBox1.PerformLayout();
             this.pgSearch.ResumeLayout(false);
             this.pgSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSearchSup)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,11 +512,21 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView gridSearchSup;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtbSearch;
         private System.Windows.Forms.Label new_emp;
+        internal System.Windows.Forms.ColumnHeader SuppliersID;
+        internal System.Windows.Forms.ColumnHeader CompanyNam;
+        internal System.Windows.Forms.ColumnHeader Surname;
+        internal System.Windows.Forms.ColumnHeader FirstName;
+        internal System.Windows.Forms.ColumnHeader CompanyAddress;
+        internal System.Windows.Forms.ColumnHeader SuppliersAddress;
+        internal System.Windows.Forms.ColumnHeader Gender;
+        internal System.Windows.Forms.ColumnHeader MaritalStatus;
+        internal System.Windows.Forms.ColumnHeader Email;
+        internal System.Windows.Forms.ColumnHeader PhoneNumber;
+        internal System.Windows.Forms.ListView listViewSupplier;
     }
 }

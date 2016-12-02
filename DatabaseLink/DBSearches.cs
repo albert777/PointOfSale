@@ -26,7 +26,27 @@ namespace DatabaseLink
             return dTable;
         }
 
+        public DataTable SearchEmployeeWithStaffID()
+        {
+            ConnectDB.ConnDB();
+            ConnectDB.cmd = new MySqlCommand("SearchEmployeeStaffID", ConnectDB.con);
+            ConnectDB.cmd.Parameters.Add("StaffID", MySqlDbType.String).Value = KeyWrd;
+            ConnectDB.cmd.CommandType = CommandType.StoredProcedure;
+            ConnectDB.dAdapter = new MySqlDataAdapter(ConnectDB.cmd);
+            ConnectDB.dAdapter.Fill(dTable);
+            return dTable;
+        }
 
+        public DataTable SearchSupplierWithSupplierID()
+        {
+            ConnectDB.ConnDB();
+            ConnectDB.cmd = new MySqlCommand("SearchSupplierWithSupplierID", ConnectDB.con);
+            ConnectDB.cmd.Parameters.Add("SuppID", MySqlDbType.String).Value = KeyWrd;
+            ConnectDB.cmd.CommandType = CommandType.StoredProcedure;
+            ConnectDB.dAdapter = new MySqlDataAdapter(ConnectDB.cmd);
+            ConnectDB.dAdapter.Fill(dTable);
+            return dTable;
+        }
 
         public DataTable SearchSuppliers()
         {
