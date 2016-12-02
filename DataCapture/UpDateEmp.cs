@@ -25,17 +25,27 @@ namespace DataCapture
            
         }
 
+        public string staffid = string.Empty;
+        public DataTable GetEmployeeTable()
+        {
+            DataTable dtble = new DataTable();
+            DBSearches search = new DBSearches();
+            search.KeyWrd = staffid;
+            dtble = search.SearchEmployeeWithStaffID();
+            return dtble;
+        }
+
         // Datatable method to initialize datagridview columnheader at form load     
             
-        DataTable table = new DataTable();
-        public DataTable Table()
-        {            
-            table.Columns.Add("Staff_ID"); table.Columns.Add("Surname"); table.Columns.Add("First Name"); table.Columns.Add("Gender"); table.Columns.Add("DOB"); table.Columns.Add("Marital Status");
-            table.Columns.Add("Qualification"); table.Columns.Add("Religion"); table.Columns.Add("State of Origin"); table.Columns.Add("Email"); table.Columns.Add("Address"); table.Columns.Add("Phone Number");
-            table.Columns.Add("Role ID"); table.Columns.Add("Role Name"); table.Columns.Add("DOE"); table.Columns.Add("Picture");
+        //DataTable table = new DataTable();
+        //public DataTable Table()
+        //{            
+        //    table.Columns.Add("Staff_ID"); table.Columns.Add("Surname"); table.Columns.Add("First Name"); table.Columns.Add("Gender"); table.Columns.Add("DOB"); table.Columns.Add("Marital Status");
+        //    table.Columns.Add("Qualification"); table.Columns.Add("Religion"); table.Columns.Add("State of Origin"); table.Columns.Add("Email"); table.Columns.Add("Address"); table.Columns.Add("Phone Number");
+        //    table.Columns.Add("Role ID"); table.Columns.Add("Role Name"); table.Columns.Add("DOE"); table.Columns.Add("Picture");
             
-            return table;
-        }
+        //    return table;
+        //}
         // Calls the  SearchEmployee method in the DBSearch class and returns a table
         public DataTable dTable()
         {

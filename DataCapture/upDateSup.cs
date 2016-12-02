@@ -21,6 +21,16 @@ namespace DataCapture
             Sup.UpdateSupplier();
         }
 
+        public string supplierid = string.Empty;
+        public DataTable GetSupplierTable()
+        {
+            DataTable dtble = new DataTable();
+            DBSearches search = new DBSearches();
+            search.KeyWrd = supplierid;
+            dtble = search.SearchSupplierWithSupplierID();
+            return dtble;
+        }
+
 
         public string Kwrd = string.Empty; 
         public DataTable dTable()

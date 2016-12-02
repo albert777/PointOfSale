@@ -67,17 +67,32 @@
             this.txtState = new System.Windows.Forms.Label();
             this.txtDOE = new System.Windows.Forms.Label();
             this.tabSearch = new System.Windows.Forms.TabPage();
+            this.listViewSearchEmp = new System.Windows.Forms.ListView();
+            this.Staff_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Surname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MaritalStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DOB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Qualification = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Religion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SO = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Addr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PhoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RoleID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RoleName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DOE = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Picture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtbSearch = new System.Windows.Forms.TextBox();
-            this.gridSearchEmp = new System.Windows.Forms.DataGridView();
             this.new_emp = new System.Windows.Forms.Label();
             this.tabUpdateDelete.SuspendLayout();
             this.tabUpdate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictImage)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSearchEmp)).BeginInit();
             this.SuspendLayout();
             // 
             // tabUpdateDelete
@@ -484,16 +499,126 @@
             // tabSearch
             // 
             this.tabSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabSearch.Controls.Add(this.listViewSearchEmp);
             this.tabSearch.Controls.Add(this.label1);
             this.tabSearch.Controls.Add(this.btnSearch);
             this.tabSearch.Controls.Add(this.txtbSearch);
-            this.tabSearch.Controls.Add(this.gridSearchEmp);
             this.tabSearch.Location = new System.Drawing.Point(4, 22);
             this.tabSearch.Name = "tabSearch";
             this.tabSearch.Padding = new System.Windows.Forms.Padding(3);
             this.tabSearch.Size = new System.Drawing.Size(876, 432);
             this.tabSearch.TabIndex = 1;
             this.tabSearch.Text = "Search Employee record";
+            // 
+            // listViewSearchEmp
+            // 
+            this.listViewSearchEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.listViewSearchEmp.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Staff_ID,
+            this.Surname,
+            this.FirstName,
+            this.Gender,
+            this.MaritalStatus,
+            this.DOB,
+            this.Qualification,
+            this.Religion,
+            this.SO,
+            this.Email,
+            this.Addr,
+            this.PhoneNumber,
+            this.RoleID,
+            this.RoleName,
+            this.DOE,
+            this.Picture});
+            this.listViewSearchEmp.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listViewSearchEmp.FullRowSelect = true;
+            this.listViewSearchEmp.GridLines = true;
+            this.listViewSearchEmp.Location = new System.Drawing.Point(3, 67);
+            this.listViewSearchEmp.Name = "listViewSearchEmp";
+            this.listViewSearchEmp.Size = new System.Drawing.Size(870, 362);
+            this.listViewSearchEmp.TabIndex = 44;
+            this.listViewSearchEmp.UseCompatibleStateImageBehavior = false;
+            this.listViewSearchEmp.View = System.Windows.Forms.View.Details;
+            this.listViewSearchEmp.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewSearchEmp_MouseClick);
+            // 
+            // Staff_ID
+            // 
+            this.Staff_ID.Text = "Staff ID";
+            this.Staff_ID.Width = 90;
+            // 
+            // Surname
+            // 
+            this.Surname.Text = "Surname";
+            this.Surname.Width = 150;
+            // 
+            // FirstName
+            // 
+            this.FirstName.Text = "First Name";
+            this.FirstName.Width = 150;
+            // 
+            // Gender
+            // 
+            this.Gender.Text = "Gender";
+            // 
+            // MaritalStatus
+            // 
+            this.MaritalStatus.Text = "Marital Status";
+            this.MaritalStatus.Width = 100;
+            // 
+            // DOB
+            // 
+            this.DOB.Text = "DOB";
+            this.DOB.Width = 150;
+            // 
+            // Qualification
+            // 
+            this.Qualification.Text = "Qualification";
+            this.Qualification.Width = 90;
+            // 
+            // Religion
+            // 
+            this.Religion.Text = "Religion";
+            this.Religion.Width = 90;
+            // 
+            // SO
+            // 
+            this.SO.Text = "State of Origin";
+            this.SO.Width = 90;
+            // 
+            // Email
+            // 
+            this.Email.Text = "Email";
+            this.Email.Width = 150;
+            // 
+            // Addr
+            // 
+            this.Addr.Text = "Address";
+            this.Addr.Width = 400;
+            // 
+            // PhoneNumber
+            // 
+            this.PhoneNumber.Text = "Phone Number";
+            this.PhoneNumber.Width = 120;
+            // 
+            // RoleID
+            // 
+            this.RoleID.Text = "Role ID";
+            this.RoleID.Width = 100;
+            // 
+            // RoleName
+            // 
+            this.RoleName.Text = "Role Name";
+            this.RoleName.Width = 100;
+            // 
+            // DOE
+            // 
+            this.DOE.Text = "DOE";
+            this.DOE.Width = 150;
+            // 
+            // Picture
+            // 
+            this.Picture.Text = "Picture";
+            this.Picture.Width = 100;
             // 
             // label1
             // 
@@ -526,19 +651,6 @@
             this.txtbSearch.TabIndex = 41;
             this.txtbSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.txtbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbSearch_KeyDown);
-            // 
-            // gridSearchEmp
-            // 
-            this.gridSearchEmp.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gridSearchEmp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.gridSearchEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridSearchEmp.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridSearchEmp.Location = new System.Drawing.Point(3, 68);
-            this.gridSearchEmp.Name = "gridSearchEmp";
-            this.gridSearchEmp.RowHeadersVisible = false;
-            this.gridSearchEmp.Size = new System.Drawing.Size(870, 361);
-            this.gridSearchEmp.TabIndex = 0;
-            this.gridSearchEmp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridSearchEmp_CellContentClick);
             // 
             // new_emp
             // 
@@ -573,7 +685,6 @@
             this.groupBox1.PerformLayout();
             this.tabSearch.ResumeLayout(false);
             this.tabSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSearchEmp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -621,9 +732,25 @@
         private System.Windows.Forms.Label txtState;
         private System.Windows.Forms.Label txtDOE;
         private System.Windows.Forms.TextBox txtbSearch;
-        private System.Windows.Forms.DataGridView gridSearchEmp;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label new_emp;
+        internal System.Windows.Forms.ColumnHeader Staff_ID;
+        internal System.Windows.Forms.ListView listViewSearchEmp;
+        internal System.Windows.Forms.ColumnHeader Surname;
+        internal System.Windows.Forms.ColumnHeader FirstName;
+        internal System.Windows.Forms.ColumnHeader Gender;
+        internal System.Windows.Forms.ColumnHeader MaritalStatus;
+        internal System.Windows.Forms.ColumnHeader DOB;
+        internal System.Windows.Forms.ColumnHeader Qualification;
+        internal System.Windows.Forms.ColumnHeader Religion;
+        internal System.Windows.Forms.ColumnHeader SO;
+        internal System.Windows.Forms.ColumnHeader Email;
+        internal System.Windows.Forms.ColumnHeader Addr;
+        internal System.Windows.Forms.ColumnHeader PhoneNumber;
+        internal System.Windows.Forms.ColumnHeader RoleID;
+        internal System.Windows.Forms.ColumnHeader RoleName;
+        internal System.Windows.Forms.ColumnHeader DOE;
+        private System.Windows.Forms.ColumnHeader Picture;
     }
 }
