@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +41,7 @@
             this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.manageStocksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newEntryToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1348, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -128,7 +130,8 @@
             // manageStocksToolStripMenuItem
             // 
             this.manageStocksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newEntryToolStripMenuItem2});
+            this.newEntryToolStripMenuItem2,
+            this.updateToolStripMenuItem1});
             this.manageStocksToolStripMenuItem.Name = "manageStocksToolStripMenuItem";
             this.manageStocksToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.manageStocksToolStripMenuItem.Text = "Manage Stocks";
@@ -140,18 +143,26 @@
             this.newEntryToolStripMenuItem2.Text = "New Entry";
             this.newEntryToolStripMenuItem2.Click += new System.EventHandler(this.newEntryToolStripMenuItem2_Click);
             // 
+            // updateToolStripMenuItem1
+            // 
+            this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
+            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.updateToolStripMenuItem1.Text = "Update";
+            this.updateToolStripMenuItem1.Click += new System.EventHandler(this.updateToolStripMenuItem1_Click);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1348, 690);
+            this.ClientSize = new System.Drawing.Size(1284, 690);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainView";
+            this.Text = "Inventory Management System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainView_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyDown);
@@ -176,5 +187,6 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem manageStocksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newEntryToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem1;
     }
 }

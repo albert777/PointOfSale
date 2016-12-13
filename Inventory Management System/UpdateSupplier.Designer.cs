@@ -375,21 +375,6 @@
             this.txtbSearch.TabIndex = 44;
             this.txtbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbSearch_KeyDown);
             // 
-<<<<<<< HEAD
-            // gridSearchSup
-            // 
-            this.gridSearchSup.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gridSearchSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridSearchSup.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridSearchSup.Location = new System.Drawing.Point(3, 76);
-            this.gridSearchSup.Name = "gridSearchSup";
-            this.gridSearchSup.RowHeadersVisible = false;
-            this.gridSearchSup.Size = new System.Drawing.Size(778, 321);
-            this.gridSearchSup.TabIndex = 0;
-            this.gridSearchSup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridSearchSup_CellContentClick);
-            // 
-=======
->>>>>>> master
             // new_emp
             // 
             this.new_emp.AutoSize = true;

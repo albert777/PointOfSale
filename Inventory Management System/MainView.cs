@@ -16,11 +16,15 @@ namespace Inventory_Management_System
         public MainView()
         {
             InitializeComponent();
+            
         }
 
         private void MainView_Load(object sender, EventArgs e)
         {
             ConnectDB.getData();
+
+            POS ps = new POS();
+            ps.ShowDialog();
             //MdiClient ctlMDI;
 
             //// Loop through all of the form's controls looking
@@ -61,6 +65,7 @@ namespace Inventory_Management_System
         private void updateEditToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EmpUpdateForm upDate = new EmpUpdateForm();
+            upDate.SelectTab();
             upDate.ShowDialog();
             while (upDate.Visible == true)
             {
@@ -71,6 +76,7 @@ namespace Inventory_Management_System
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EmpUpdateForm delete = new EmpUpdateForm();
+            delete.SelectTab();
             delete.ShowDialog();
             while (delete.Visible == true)
             {
@@ -91,6 +97,7 @@ namespace Inventory_Management_System
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UpdateSupplier updateSup = new UpdateSupplier();
+            updateSup.SelectTab();
             updateSup.ShowDialog();
             while (updateSup.Visible == true)
             {
@@ -101,6 +108,7 @@ namespace Inventory_Management_System
         private void deleteToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             UpdateSupplier updateSup = new UpdateSupplier();
+            updateSup.SelectTab();
             updateSup.ShowDialog();
             while (updateSup.Visible == true)
             {
@@ -121,6 +129,14 @@ namespace Inventory_Management_System
         {
             AddUpdateStock stocks = new AddUpdateStock();
             stocks.ShowDialog();
+        }
+
+        private void updateToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AddUpdateStock selected_tab = new AddUpdateStock();
+            
+            selected_tab.SelectUpdateTab();
+            selected_tab.ShowDialog();
         }
     }
 }

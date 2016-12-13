@@ -16,8 +16,8 @@ namespace DatabaseLink
            by the user is valid, the users details such as UserName, Surname, First_Name as well as date and time 
            of the login are captured and stored in the login log table in database.*/
         
-        public string Uname; public string Pwrd; public int count = 0;
-        private string Sname, Fname; DateTime date;
+        public string Uname; public string Pwrd, rolename; public int count = 0;
+        private string Sname, Fname; DateTime date; public string Surname, Firstname;
         
         //DBConnect conn = new DBConnect(); // Connection to database
         // To cross check user supplied information with the database
@@ -58,7 +58,10 @@ namespace DatabaseLink
                 date = DateTime.Now;
                 Sname = ConnectDB.reader.GetString("Surname");
                 Fname = ConnectDB.reader.GetString("First_Name");
+                rolename = ConnectDB.reader.GetString("RoleName");
+                Surname = Sname; Firstname = Fname;
             }
+            
             //conn.con.Close();
         }
 

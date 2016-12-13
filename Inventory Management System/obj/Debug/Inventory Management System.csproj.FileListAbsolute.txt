@@ -18,3 +18,4 @@ C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\
 C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory_Management_System.UpdateSupplier.resources
 C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory_Management_System.DBConfig.resources
 C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory_Management_System.AddUpdateStock.resources
+C:\Users\Ekoma\Dropbox\SIMS\Point of Sale\Inventory Management System\obj\Debug\Inventory_Management_System.POS.resources

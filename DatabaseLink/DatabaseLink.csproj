@@ -45,6 +45,7 @@
     <Compile Include="AddEmployee.cs" />
     <Compile Include="AddStockUpdate.cs" />
     <Compile Include="AddSupplierUpdate.cs" />
+    <Compile Include="AddToSales.cs" />
     <Compile Include="ConnectDB.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="DBSearches.cs" />

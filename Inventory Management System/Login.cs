@@ -17,6 +17,15 @@ namespace Inventory_Management_System
         public Login()
         {
             InitializeComponent();
+            FillRoleCombo();
+        }
+
+        public string username;
+
+        private void FillRoleCombo()
+        {
+            combRole.Items.Add("Admin");
+            combRole.Items.Add("Sales Clerk");
         }
 
         private void Logins()
@@ -25,12 +34,48 @@ namespace Inventory_Management_System
             {
                 GetLoginInfo login = new GetLoginInfo(txtUserID.Text, txtPassword.Text);
 
-                if (login.counter == 1)
+                if (combRole.Text == "Admin")
                 {
-                    login.validateLogin();
-                    MainView main = new MainView();
-                    main.Show();
-                    this.Hide();
+                    
+                    if (login.counter == 1)
+                    {
+                        login.validateLogin();
+                        login.getRoleName();
+                        username = login.Sname + " " + login.Fname;
+                        if (login.RoleName == "General Manager" || login.RoleName == "Sales Manager")
+                        {
+
+                            MainView main = new MainView();
+                            main.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Either the Username or Password you supplied is incorrect, cross check and try again!");
+                        }
+                    }
+                    
+                }
+                else if (combRole.Text == "Sales Clerk")
+                {
+                    if (login.counter == 1)
+                    {
+                        login.validateLogin();
+                        login.getRoleName();
+                        username = login.Sname + " " + login.Fname;
+                        if (login.RoleName == "Sales Clerk")
+                        {
+                            
+                            POS sales = new POS();
+                            sales.userdetail = username;
+                            sales.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Either the Username or Password you supplied is incorrect, cross check and try again!");
+                        }
+                    }
                 }
                 else
                 {

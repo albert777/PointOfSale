@@ -19,6 +19,11 @@ namespace Inventory_Management_System
             InitializeComponent();
         }
 
+        public void SelectUpdateTab()
+        {
+            tabAddStock.SelectedTab = PageUpdateStock;
+        }
+
         private void CaptureStockInfo()
         {
             int Quantity = Convert.ToInt32(txtQuantity.Text);

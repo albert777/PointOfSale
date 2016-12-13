@@ -17,9 +17,10 @@ namespace DataCapture
         private string UsID = string.Empty;
         private string Pwrd = string.Empty;
         public int counter = 0;
+        public string RoleName, Sname, Fname;
+        
                
         LoginData getLogin = new LoginData(); 
-        // To capture login details
         public  GetLoginInfo(string uid, string pwd)
         {
             UsID = uid; Pwrd = pwd;
@@ -31,9 +32,19 @@ namespace DataCapture
         // Fetches users basic information and inserts them to the login log table in database.
         public void validateLogin()
         {
+            
             getLogin.fetchUserInfo();
             getLogin.insertLoginDetails();
+            
         }
-        
+
+        public void getRoleName()
+        {
+            RoleName = getLogin.rolename;
+            Sname = getLogin.Surname;
+            Fname = getLogin.Firstname;
+        }
+
+                
     }
 }

@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="GetEmpDetails.cs" />
     <Compile Include="GetLoginInfo.cs" />
+    <Compile Include="GetNames.cs" />
+    <Compile Include="GetSales.cs" />
     <Compile Include="GetStockDetails.cs" />
     <Compile Include="GetSupplierDet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

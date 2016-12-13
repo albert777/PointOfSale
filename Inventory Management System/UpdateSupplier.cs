@@ -20,6 +20,11 @@ namespace Inventory_Management_System
             fillCombo();
         }
 
+        public void SelectTab()
+        {
+            tabUpdateDelete.SelectedTab = pgSearch;
+        }
+
         public void fillCombo()
         {
             combGender.Items.Add("Male");
