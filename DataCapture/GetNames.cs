@@ -7,21 +7,21 @@ using DatabaseLink;
 
 namespace DataCapture
 {
-    public class GetNames
-    {
-        public string Sname, Fname;
+    //public class GetNames
+    //{
+    //    private string Sname, Fname;
 
-        LoginData getLogin = new LoginData();
-        public string Surname()
-        {
+    //    LoginData getLogin = new LoginData();
+    //    public string Surname()
+    //    {
 
-            return Sname = getLogin.Surname;
-        }
+    //        return Sname = getLogin.Surname;
+    //    }
 
-        public string Firstname()
-        {
+    //    public string Firstname()
+    //    {
 
-            return Fname = getLogin.Firstname;
-        }
-    }
+    //        return Fname = getLogin.Firstname;
+    //    }
+    //}
 }

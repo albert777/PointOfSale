@@ -10,7 +10,7 @@ namespace DatabaseLink
 {
     public class AddToSales
     {
-        public string Staffname, ProductName; public int Quantity, Unitprice, Discount, Totalprice;
+        public string Staffname, ProductName, Discount, Totalprice; public int Quantity, Unitprice;
         public DateTime date;
 
         public void InsertNewSales()
@@ -24,8 +24,8 @@ namespace DatabaseLink
             ConnectDB.cmd.Parameters.Add("Pname", MySqlDbType.String).Value = ProductName;
             ConnectDB.cmd.Parameters.Add("Quant", MySqlDbType.Int32).Value = Quantity;
             ConnectDB.cmd.Parameters.Add("Uprice", MySqlDbType.Int32).Value = Unitprice;
-            ConnectDB.cmd.Parameters.Add("discount", MySqlDbType.Int32).Value = Discount;
-            ConnectDB.cmd.Parameters.Add("Tamount", MySqlDbType.Int32).Value = Totalprice;
+            ConnectDB.cmd.Parameters.Add("discount", MySqlDbType.String).Value = Discount;
+            ConnectDB.cmd.Parameters.Add("Tamount", MySqlDbType.String).Value = Totalprice;
 
             ConnectDB.cmd.CommandType = CommandType.StoredProcedure;
 

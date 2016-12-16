@@ -30,7 +30,7 @@ namespace Inventory_Management_System
         double discount; // Sets discount value as well as return the value to zero when necessary.
         //public string AmountPaid;
         //public string getAmountToPay;
-        public double ammountToPay;
+        
         //public string displayChange;
 
         private void RetrieveStock()
@@ -159,6 +159,7 @@ namespace Inventory_Management_System
 
         private void TotalInCart()
         {
+            double ammountToPay = 0;
             foreach (ListViewItem Item in listViewPurchase.Items)
             {
                 ammountToPay += double.Parse(Item.SubItems[4].Text);
@@ -168,11 +169,12 @@ namespace Inventory_Management_System
 
         public void AddSalesToDB()
         {
-            GetNames log = new GetNames();
-            string sname = log.Surname();
-            string fname = log.Firstname();
-            int Unitprice, Quantity, discount, totalamount;
-            string prodname; string staffname = sname + " " + fname;
+            Login getFirstname = (Login)Application.OpenForms["Login"];
+            //GetNames log = new GetNames();
+            //string sname = log.Surname();
+            //string fname = log.Firstname();
+            int Unitprice, Quantity; string discount, totalamount;
+            string prodname; string staffname = getFirstname.username;
             DateTime Date = DateTime.Now;
 
             foreach (ListViewItem Item in listViewPurchase.Items)
@@ -180,8 +182,9 @@ namespace Inventory_Management_System
                 prodname = Item.SubItems[0].Text;
                 Unitprice = Convert.ToInt32(Item.SubItems[1].Text);
                 Quantity = Convert.ToInt32(Item.SubItems[2].Text);
-                discount = Convert.ToInt32(Item.SubItems[3].Text);
-                totalamount = Convert.ToInt32(Item.SubItems[4].Text);
+                //double conv = Convert.ToDouble(Item.SubItems[3].Text);
+                discount = Item.SubItems[3].Text;
+                totalamount = Item.SubItems[4].Text;
                 GetSales sales = new GetSales(staffname, Date, prodname, Quantity, Unitprice, discount, totalamount);
             }
  

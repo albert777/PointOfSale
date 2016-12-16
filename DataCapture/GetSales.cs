@@ -13,7 +13,7 @@ namespace DataCapture
         //private DateTime date;
 
         AddToSales sales = new AddToSales();
-        public GetSales(string staffname, DateTime date, string prodname, int Quant, int Uprice, int discount, int Tprice)
+        public GetSales(string staffname, DateTime date, string prodname, int Quant, int Uprice, string discount, string Tprice)
         {
             sales.Staffname = staffname; sales.date = date; sales.ProductName = prodname; sales.Quantity = Quant;
             sales.Unitprice = Uprice; sales.Discount = discount; sales.Totalprice = Tprice;

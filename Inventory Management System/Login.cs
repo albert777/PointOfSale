@@ -21,6 +21,7 @@ namespace Inventory_Management_System
         }
 
         public string username;
+        public string firstname;
 
         private void FillRoleCombo()
         {
@@ -62,6 +63,7 @@ namespace Inventory_Management_System
                     {
                         login.validateLogin();
                         login.getRoleName();
+                        firstname = login.Fname;
                         username = login.Sname + " " + login.Fname;
                         if (login.RoleName == "Sales Clerk")
                         {
