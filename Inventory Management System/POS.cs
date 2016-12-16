@@ -13,8 +13,10 @@ using Microsoft.VisualBasic;
 
 namespace Inventory_Management_System
 {
+    
     public partial class POS : Form
     {
+        private CashOut processPay;    
         public POS()
         {
             InitializeComponent();
@@ -22,7 +24,14 @@ namespace Inventory_Management_System
             discountedAmount = String.Format("{0:0.00}", setnull);
             labelTotalPrice.Text = discountedAmount;
         }
-        public string userdetail;
+
+        public string userdetail; // Gets users details for updating database
+        string discountedAmount; // Gets discounted amount so as to determine total payout.
+        double discount; // Sets discount value as well as return the value to zero when necessary.
+        //public string AmountPaid;
+        //public string getAmountToPay;
+        public double ammountToPay;
+        //public string displayChange;
 
         private void RetrieveStock()
         {
@@ -78,8 +87,6 @@ namespace Inventory_Management_System
             }
         }
 
-        
-
         private void CalculateTotalPrice()
         {
             if (string.IsNullOrEmpty(txtbQunatity.Text))
@@ -100,8 +107,6 @@ namespace Inventory_Management_System
             }
         }
 
-        string discountedAmount;
-        double discount;
         private void CalculateTotalPriceAfterDiscount()
         {
             
@@ -143,26 +148,33 @@ namespace Inventory_Management_System
             discountedAmount = String.Format("{0:0.00}", discount); //Sets discount back to Zero 
         }
 
+        //public void sendCheckout()
+        //{
+        //    double paid = Convert.ToDouble(AmountPaid);
+        //    double change = paid - Convert.ToDouble(getAmountToPay);
+        //    //labelChange.Text = String.Format("{0:0,0.00}", change);
+        //    MessageBox.Show(String.Format("{0:0,0.00}", change));
+        //    displayChange = String.Format("{0:0,0.00}", change);
+        //}
+
         private void TotalInCart()
         {
-            double ammountToPay = 0;
             foreach (ListViewItem Item in listViewPurchase.Items)
             {
                 ammountToPay += double.Parse(Item.SubItems[4].Text);
             }
-            labelTotalAmountToPay.Text = String.Format("{0:0,0.00}", ammountToPay);
-            
+            labelTotalAmountToPay.Text = String.Format("{0:0,0.00}", ammountToPay);  
         }
 
-        private void AddSalesToDB()
+        public void AddSalesToDB()
         {
             GetNames log = new GetNames();
             string sname = log.Surname();
             string fname = log.Firstname();
             int Unitprice, Quantity, discount, totalamount;
-            string prodname; string staffname = sname + " " + fname ;
+            string prodname; string staffname = sname + " " + fname;
             DateTime Date = DateTime.Now;
-            
+
             foreach (ListViewItem Item in listViewPurchase.Items)
             {
                 prodname = Item.SubItems[0].Text;
@@ -190,6 +202,46 @@ namespace Inventory_Management_System
             foreach (ListViewItem item in listViewPurchase.Items)
                 if (item.Selected)
                     listViewPurchase.Items.Remove(item);
+        }
+
+        // Increments quantity when minus image is clicked, and recalculates total and amount to pay
+        private void IncrementQuantity()
+        {
+            int IncreaseQuantity = 0;
+            double Quantity, UnitPrice, TotalPrice;
+            foreach (ListViewItem item in listViewPurchase.Items)
+                if (item.Selected)
+                {
+                    IncreaseQuantity = Convert.ToInt32(item.SubItems[1].Text);
+                    IncreaseQuantity++;
+                    item.SubItems[1].Text = Convert.ToString(IncreaseQuantity);
+
+                    Quantity = double.Parse(item.SubItems[1].Text);
+                    UnitPrice = double.Parse(item.SubItems[2].Text);
+                    TotalPrice = Quantity * UnitPrice; 
+                    item.SubItems[4].Text = String.Format("{0:0,0.00}", TotalPrice);
+                    TotalInCart(); // Method called to calculate total in cart and amount to pay.
+                }
+        }
+
+        // Decrements quantity when minus image is clicked, and recalculates total and amount to pay
+        private void DecrementQuantity()
+        {
+            int decrementQuantity = 0;
+            double Quantity, UnitPrice, TotalPrice;
+            foreach (ListViewItem item in listViewPurchase.Items)
+                if (item.Selected)
+                {
+                    decrementQuantity = Convert.ToInt32(item.SubItems[1].Text);
+                    decrementQuantity--;
+                    item.SubItems[1].Text = Convert.ToString(decrementQuantity);
+
+                    Quantity = double.Parse(item.SubItems[1].Text);
+                    UnitPrice = double.Parse(item.SubItems[2].Text);
+                    TotalPrice = Quantity * UnitPrice;
+                    item.SubItems[4].Text = String.Format("{0:0,0.00}", TotalPrice);
+                    TotalInCart(); // Method called to calculate total in cart and amount to pay.
+                }
         }
 
         private void txtbSearch_KeyDown(object sender, KeyEventArgs e)
@@ -255,6 +307,23 @@ namespace Inventory_Management_System
         private void checkBoxDiscount_CheckedChanged(object sender, EventArgs e)
         {
             txtbDiscount.ReadOnly = false;
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            IncrementQuantity();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            DecrementQuantity();
+        }
+
+        private void btnProcess_Click(object sender, EventArgs e)
+        {
+            
+            processPay = new CashOut(labelTotalAmountToPay.Text);            
+            processPay.Show();
         }
 
         //private void txtbSearch_TextChanged(object sender, EventArgs e)
