@@ -120,10 +120,14 @@ namespace Inventory_Management_System
             //showPOS.richTextBox1.Text = showPOS.displayChange;
             showPOS.Show();
             double change = Convert.ToDouble(richCashOut.Text) - Convert.ToDouble(pospay);
-            showPOS.labelChange.Text = String.Format("{0:0,0.00}", change); 
+            showPOS.labelChange.Text = String.Format("{0:0,0.00}", change);
             //MessageBox.Show(String.Format("{0:0,0.00}", change), "Label Change Text");
             //showPOS.labelChange.TextChanged += labelChange_TextChanged;
             showPOS.AddSalesToDB();
+            showPOS.UpdateStockWithQuantityAfterSale();
+            showPOS.PrintReceipt();
+            //showPOS.RemoveItemFromListviewAfterSale();
+            //showPOS.SetTextBoxToNullAfterSale();
             
             
            

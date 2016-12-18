@@ -60,5 +60,24 @@ namespace DatabaseLink
             }
  
         }
+
+        public void UpdateStockWithQuantityAfterSale()
+        {
+
+            ConnectDB.ConnDB();
+            ConnectDB.cmd = new MySqlCommand("UpdateStocksByQuantAfterSale", ConnectDB.con);
+
+            ConnectDB.cmd.Parameters.Add("ProdName", MySqlDbType.String).Value = ProdName;
+            ConnectDB.cmd.Parameters.Add("Quant", MySqlDbType.Int32).Value = Quant;
+
+            ConnectDB.cmd.CommandType = CommandType.StoredProcedure;
+
+            ConnectDB.reader = ConnectDB.cmd.ExecuteReader();
+            while (ConnectDB.reader.Read())
+            {
+
+            }
+
+        }
     }
 }

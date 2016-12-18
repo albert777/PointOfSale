@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -167,6 +168,31 @@ namespace Inventory_Management_System
             labelTotalAmountToPay.Text = String.Format("{0:0,0.00}", ammountToPay);  
         }
 
+        public void UpdateStockWithQuantityAfterSale()
+        {
+            int Quantity, saleQuantity; string prodname;
+            int availQuantity = 0;
+
+            foreach (ListViewItem Item in listViewPurchase.Items)
+            {
+                prodname = Item.SubItems[0].Text;
+                saleQuantity = Convert.ToInt32(Item.SubItems[1].Text);
+                DataTable stocktable;
+                UpdateStock stockupdate = new UpdateStock();
+                stockupdate.Kwrd = prodname;
+                stocktable = stockupdate.dTable();
+
+                foreach (DataRow row in stocktable.Rows)
+                {
+                    availQuantity = Convert.ToInt32(row["Quantity"]);
+                }
+
+                Quantity = availQuantity - saleQuantity;
+                //MessageBox.Show(Convert.ToString(Quantity));
+                GetStockDetails update = new GetStockDetails(prodname, Quantity);
+            }
+        }
+
         public void AddSalesToDB()
         {
             Login getFirstname = (Login)Application.OpenForms["Login"];
@@ -180,8 +206,8 @@ namespace Inventory_Management_System
             foreach (ListViewItem Item in listViewPurchase.Items)
             {
                 prodname = Item.SubItems[0].Text;
-                Unitprice = Convert.ToInt32(Item.SubItems[1].Text);
-                Quantity = Convert.ToInt32(Item.SubItems[2].Text);
+                Quantity = Convert.ToInt32(Item.SubItems[1].Text);
+                Unitprice = Convert.ToInt32(Item.SubItems[2].Text);
                 //double conv = Convert.ToDouble(Item.SubItems[3].Text);
                 discount = Item.SubItems[3].Text;
                 totalamount = Item.SubItems[4].Text;
@@ -198,6 +224,22 @@ namespace Inventory_Management_System
             txtbProd.Text = string.Empty; txtbPrice.Text = string.Empty; txtbQunatity.Text = string.Empty;
             
             labelTotalPrice.Text = String.Format("{0:0.00}", itemnull);
+        }
+
+        public void SetTextBoxToNullAfterSale()
+        {
+            
+            double itemnull = 0.00;
+            itemnull = Math.Round(itemnull, 2);
+            labelTotalAmountToPay.Text = String.Format("{0:0.00}", itemnull);
+
+            labelChange.Text = String.Format("{0:0.00}", itemnull);
+        }
+
+        public void RemoveItemFromListviewAfterSale()
+        {
+            foreach (ListViewItem item in listViewPurchase.Items)
+                    listViewPurchase.Items.Remove(item);
         }
 
         private void RemoveItemFromListview()
@@ -245,6 +287,58 @@ namespace Inventory_Management_System
                     item.SubItems[4].Text = String.Format("{0:0,0.00}", TotalPrice);
                     TotalInCart(); // Method called to calculate total in cart and amount to pay.
                 }
+        }
+
+        public void PrintReceipt()
+        {
+            PrintDocument printReceipt = new PrintDocument();
+            printReceipt.PrintPage += new PrintPageEventHandler(printReceipt_PrintPage);
+            printReceipt.Print();
+        }
+
+        void printReceipt_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Login getFirstname = (Login)Application.OpenForms["Login"];
+            Graphics graphic = e.Graphics;
+
+            Font font = new Font("Courier New", 8);
+            float fontHeight = font.GetHeight();
+            SolidBrush brush = new SolidBrush(Color.Black);
+
+            int startX = 10; int startY = 10; int offset = 40;
+            string items = "Items".PadRight(15); string quant = "Qty".PadRight(5); string Uprice = "Price".PadRight(8);
+            string disc = "Discount".PadRight(12); string totalp = "Total Price";
+
+            string columnline = items + quant + Uprice + disc + totalp;
+            graphic.DrawString("Welcome To Agram Pharmacy", new Font("Courier New", 18), brush, startX, startY);
+            graphic.DrawString("-----------------------------------------------------", new Font("Courier New", 8), brush, startX, startY + offset);
+            offset = offset + 80;
+            graphic.DrawString(columnline, font, brush, startX, startY + 60);
+            graphic.DrawString("-----------------------------------------------------", new Font("Courier New", 8), brush, startX, startY + 80);
+
+            foreach (ListViewItem Item in listViewPurchase.Items)
+            {
+                string item = Item.SubItems[0].Text.PadRight(15);
+                string quantity = Item.SubItems[1].Text.PadRight(5);
+                string unitPrice = Item.SubItems[2].Text.PadRight(8);
+                string discount = Item.SubItems[3].Text.PadRight(12);
+                string totalPrice = String.Format("{0:c}", Item.SubItems[4].Text);
+
+                string line = item + quantity + unitPrice + discount + totalPrice;
+
+                graphic.DrawString(line, font, brush, startX, startY + offset);
+
+                offset = offset + (int)fontHeight + 5;
+            }
+
+            //string amountToPay = "Total to Pay".PadRight(30) + String.Format("{0:c}", labelTotalAmountToPay.Text);
+            offset = offset + 5;
+            //graphic.DrawString("-----------------------------------------------------", new Font("Courier New", 8), brush, startX, startY + 145);
+            graphic.DrawString("Total to Pay".PadRight(40) + String.Format("{0:c}", labelTotalAmountToPay.Text), font, brush, startX, startY + offset);
+            //graphic.DrawString("-----------------------------------------------------", new Font("Courier New", 8), brush, startX, startY + 170);
+            //offset = offset + (int)fontHeight;
+            graphic.DrawString("Change Collected".PadRight(40) + String.Format("{0:c}", labelChange.Text), font, brush, startX, startY + 200);
+            graphic.DrawString("You were attended to by:  " + getFirstname.username, font, brush, startX, startY + 230);
         }
 
         private void txtbSearch_KeyDown(object sender, KeyEventArgs e)

@@ -26,7 +26,11 @@ namespace DataCapture
             
         }
 
-        
+        public GetStockDetails(string prodname, int quant)
+        {
+            stockDetails.ProdName = prodname; stockDetails.Quant = quant;
+            stockDetails.UpdateStockWithQuantityAfterSale();
+        }
 
     }
 }
