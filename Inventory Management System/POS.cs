@@ -334,11 +334,14 @@ namespace Inventory_Management_System
             //string amountToPay = "Total to Pay".PadRight(30) + String.Format("{0:c}", labelTotalAmountToPay.Text);
             offset = offset + 5;
             //graphic.DrawString("-----------------------------------------------------", new Font("Courier New", 8), brush, startX, startY + 145);
-            graphic.DrawString("Total to Pay".PadRight(40) + String.Format("{0:c}", labelTotalAmountToPay.Text), font, brush, startX, startY + offset);
+            graphic.DrawString("Total to Pay".PadRight(39) + String.Format("({0:c})", labelTotalAmountToPay.Text), font, brush, startX, startY + offset);
             //graphic.DrawString("-----------------------------------------------------", new Font("Courier New", 8), brush, startX, startY + 170);
             //offset = offset + (int)fontHeight;
-            graphic.DrawString("Change Collected".PadRight(40) + String.Format("{0:c}", labelChange.Text), font, brush, startX, startY + 200);
-            graphic.DrawString("You were attended to by:  " + getFirstname.username, font, brush, startX, startY + 230);
+            CashOut getAmountPaid = (CashOut) Application.OpenForms["CashOut"];
+            double amountPaid = Convert.ToDouble(getAmountPaid.richCashOut.Text);
+            graphic.DrawString("Amount Paid".PadRight(40) + String.Format("{0:c}", amountPaid), font, brush, startX, startY + 200);
+            graphic.DrawString("Change Collected".PadRight(40) + String.Format("{0:c}", labelChange.Text), font, brush, startX, startY + 230);
+            graphic.DrawString("You were attended to by:  " + getFirstname.username, font, brush, startX, startY + 260);
         }
 
         private void txtbSearch_KeyDown(object sender, KeyEventArgs e)
@@ -421,6 +424,26 @@ namespace Inventory_Management_System
             
             processPay = new CashOut(labelTotalAmountToPay.Text);            
             processPay.Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            RetrieveStock();
+        }
+
+        private void pictureBoxAdd_Click(object sender, EventArgs e)
+        {
+            AddToListView();
+            TotalInCart();
+            SetTextBoxToNull();
+            checkBoxDiscount.Checked = false;
+            txtbDiscount.ReadOnly = true;
+        }
+
+        private void pictureBoxRemove_Click(object sender, EventArgs e)
+        {
+            RemoveItemFromListview();
+            TotalInCart();
         }
 
         //private void txtbSearch_TextChanged(object sender, EventArgs e)

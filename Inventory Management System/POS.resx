@@ -165,7 +165,7 @@
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8
         AAAGXklEQVRIS9VWaWxUZRRF/YEoApY9gCxiIFgqFmSnidhCBdECBQM1gCDUAm2BUpY0OgktoAVNiD8w
         MdGg/pGwtZRpaQtDa6HLtDOFrnSj01k6+3TWN1vneL83DJ0uLBL84SQnd+537z3n3vvevDeDBv2/Pngp
         WWoacbTJN/pwJYb/p72nVXNT05u9iRmt3ssZzZ7G9Ga3PqPFbc5o8eiOt3rqj7d5Lxxv8Sak1TgmvZBG
@@ -196,7 +196,7 @@
         N4g0QxOFTf4H/r/8/AM7xnxjux/eBgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAXUSURBVEhLtZd5TFRXFMZp0iammibapDGlxPhXExMT/1GS
@@ -227,7 +227,7 @@
         jFtZWSXRvf/dvzwrFPL1u+v+AQaVlyzoDbsmAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAADhVJREFUWEedWQtwVNUZTgLyUnxbpGqRikL2CS7C7t27z+zj7mYh+7rZJGAZdBot
@@ -293,7 +293,7 @@
         Pg/wb5pd4s+U1mQUYMDYlW3+v2nAGVPQeIM2AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxRemove.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAcYSURBVFhH7ZgNUFTXFcfve/e9fbuP/WCBlg9RCm6QaKoJ

@@ -78,43 +78,9 @@ namespace Inventory_Management_System
             
         //}
         public string get;
-        public void CalculateChange()
-        {
-
-            //amountPaid = richCashOut.Text;
-            //double cashCollected, change;
-            ////amountToPay = Convert.ToDouble();
-            //cashCollected = Convert.ToDouble(richCashOut.Text);
-            //string s = Convert.ToString(amountToPay);
-            //// change = cashCollected - amountToPay;
-            //MessageBox.Show(amountPaid);
-            ////getAmount.Change = change;
-
-        }
-
-        //private void ActivatePOS()
-        //{
-        //    if (snd != null && !snd.IsDisposed)
-        //    {
-        //        //if (snd.WindowState == FormWindowState.Minimized)
-        //        //{
-        //        //    snd.WindowState = FormWindowState.Normal;
-        //        //}
-        //        snd.Activate();
-        //    }
-        //}
-
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            //CalculateChange();
-            //POS send = new POS();
-            //snd.AmountPaid = richCashOut.Text;
-            //snd.getAmountToPay = pospay;
-            //ActivatePOS();
-            //snd = new POS();
-            //snd.Activate();
-            //snd.sendCheckout();
             POS showPOS = (POS) Application.OpenForms["POS"];
             //showPOS.labelChange.ForeColor = Color.Green;
             //showPOS.richTextBox1.Text = showPOS.displayChange;
